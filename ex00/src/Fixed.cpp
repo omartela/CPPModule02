@@ -12,6 +12,7 @@
 
 #include "../inc/Fixed.hpp"
 #include <iostream>
+#include "Fixed.hpp"
 
 Fixed::Fixed() : _value(0)
 {
@@ -50,3 +51,4 @@ void Fixed::setRawBits(int const raw)
     std::cout << "setRawBits member function called" << std::endl;
     _value = raw;
 }
+

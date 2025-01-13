@@ -20,21 +20,25 @@ class Fixed
         static const int _fractionalbits = 8;
     public:
         Fixed();
+        Fixed(const int newValue);
+        Fixed(const float newValue);
         ~Fixed();
         Fixed(const Fixed &other);
         Fixed   &operator=(const Fixed &other);
         int     getRawBits(void) const;
         void    setRawBits(int const raw);
+        float   toFloat(void) const;
+        int     toInt(void) const;
         bool    operator>(const Fixed &other);
         bool    operator<(const Fixed &other);
         bool    operator>=(const Fixed &other);
         bool    operator<=(const Fixed &other);
         bool    operator==(const Fixed &other);
         bool    operator!=(const Fixed &other);
-        Fixed   &operator+(const Fixed &other);
-        Fixed   &operator-(const Fixed &other);
-        Fixed   &operator*(const Fixed &other);
-        Fixed   &operator/(const Fixed &other);
+        Fixed   operator+(const Fixed &other);
+        Fixed   operator-(const Fixed &other);
+        Fixed   operator*(const Fixed &other);
+        Fixed   operator/(const Fixed &other);
         Fixed   &operator++();
         Fixed   &operator--();
         Fixed   operator++(int);
@@ -45,3 +49,5 @@ class Fixed
         static  const Fixed &max(const Fixed &F1, const Fixed &F2);
 
 };
+
+std::ostream   &operator<<(std::ostream &out, const Fixed &fixed);

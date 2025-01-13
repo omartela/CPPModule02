@@ -18,9 +18,15 @@ Fixed::Fixed() : _value(0)
     std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const int newValue) : _value(newValue << _fractionalbits) {}
+Fixed::Fixed(const int newValue) : _value(newValue << _fractionalbits) 
+{
+    std::cout << "Int constructor called" << std::endl;
+}
 
-Fixed::Fixed(const float newValue) : _value(static_cast<int>(newValue * (1 << _fractionalbits))) {}
+Fixed::Fixed(const float newValue) : _value(static_cast<int>(newValue * (1 << _fractionalbits))) 
+{
+    std::cout << "Float constructor called" << std::endl;
+}
 
 Fixed::~Fixed()
 {
@@ -63,4 +69,10 @@ float Fixed::toFloat(void) const
 int Fixed::toInt(void) const
 {
     return (_value >> _fractionalbits);
+}
+
+std::ostream &operator<<(std::ostream &out, const Fixed &fixed)
+{
+    out << fixed.toFloat();
+    return (out);
 }
