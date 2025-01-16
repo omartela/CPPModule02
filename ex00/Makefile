@@ -16,7 +16,7 @@ TARGET = Fixed
 INC_DIR = inc
 SRC = src/Fixed.cpp src/main.cpp
 OBJ = $(SRC:.cpp=.o)
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -I$(INC_DIR)
+CFLAGS = -Wall -Wextra -Werror -I$(INC_DIR)
 
 all: $(TARGET)
 
