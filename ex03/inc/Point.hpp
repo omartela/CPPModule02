@@ -24,9 +24,7 @@ class Point : Fixed
         Point(float newX, float newY);
         ~Point();
         Point(const Point &other);
-        Point   &operator=(const Point &other);
+        Point   &operator=(const Point &other) = delete;
         Fixed getX() const;
         Fixed getY() const;
-        Point computeVector(const Point a, const Point b);
-        Fixed computeCrossProduct(const Point a, const Point b);
 };

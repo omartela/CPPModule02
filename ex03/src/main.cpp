@@ -17,5 +17,5 @@ bool bsp(Point const a, Point const b, Point const c, Point const point);
 
 int main( void ) 
 {
-    bsp(Point(3.0, 2.0),Point(5.0, 3.0), Point(6.0,1.0), Point(4.0, 2.0));
+    bsp(Point(3.0, 2.0),Point(5.0, 3.0), Point(6.0,1.0), Point(2.0, 2.0));
 }
