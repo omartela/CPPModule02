@@ -12,6 +12,7 @@
 
 #include "../inc/Fixed.hpp"
 #include <iostream>
+#include <cmath>
 
 Fixed::Fixed() : _value(0)
 {
@@ -23,7 +24,7 @@ Fixed::Fixed(const int newValue) : _value(newValue << _fractionalbits)
     std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed(const float newValue) : _value(static_cast<int>(newValue * (1 << _fractionalbits))) 
+Fixed::Fixed(const float newValue) : _value(static_cast<int>(std::roundf(newValue * (1 << _fractionalbits)))) 
 {
     std::cout << "Float constructor called" << std::endl;
 }
